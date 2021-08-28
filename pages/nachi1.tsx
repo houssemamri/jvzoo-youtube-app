@@ -1,19 +1,18 @@
-// import Example from "../components/header";
-import Body from "../components/body";
-import Footer from "../components/footer";
+import React from "react";
+import NachiPage1 from "../components/NachiPage1";
 import dynamic from "next/dynamic";
 
 const DynamicExample = dynamic(() => import("../components/header"), {
   ssr: false,
 });
 
-export default function Home() {
+function Nachi() {
   return (
     <div>
-      {/* <Example /> */}
       {typeof window !== "undefined" && <DynamicExample />}
-      <Body />
-      <Footer />
+      <NachiPage1 />
     </div>
   );
 }
+
+export default Nachi;
